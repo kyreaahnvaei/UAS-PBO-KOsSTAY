@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Win_user_pembayaran</class>
+ <widget class="QMainWindow" name="Win_user_pembayaran"><property name="geometry"><rect><x>0</x><y>0</y><width>1320</width><height>780</height></rect></property><property name="minimumSize"><size><width>1180</width><height>700</height></size></property><property name="windowTitle"><string>KOSTAY - Pembayaran</string></property><property name="styleSheet"><string notr="true">
+* { font-family: 'Segoe UI', 'Inter', sans-serif; font-size: 10pt; color: #243040; }
+QMainWindow, QWidget#centralwidget { background: #F4F8F7; }
+QLabel { background: transparent; }
+QCheckBox { background: transparent; spacing: 8px; }
+QScrollArea { background: transparent; border: none; }
+
+QFrame#loginShell { background: #FFFFFF; border-radius: 28px; }
+QFrame#brandPanel { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #E9F8F2, stop:1 #CDEFF2); border-top-left-radius: 28px; border-bottom-left-radius: 28px; }
+QWidget#centralwidgetLogin { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #1B2735, stop:0.55 #0B5D73, stop:1 #12A87B); }
+
+QFrame#sidebarUser, QFrame#sidebarAdmin { background: qlineargradient(x1:0,y1:0,x2:0,y2:1, stop:0 #1B2735, stop:1 #0B5D73); }
+QFrame#sidebarUser QLabel, QFrame#sidebarAdmin QLabel { color: #FFFFFF; }
+QFrame#logoCard { background: #FFFFFF; border-radius: 18px; }
+QLabel[role="roleBadge"] { background: #F7A823; color: #1B2735; border-radius: 10px; padding: 4px 12px; font-weight: 800; letter-spacing: 2px; }
+QFrame#sidebarUser QLabel[role="roleBadge"], QFrame#sidebarAdmin QLabel[role="roleBadge"] { color: #1B2735; }
+QLabel[role="menuHint"] { color: #9FC3CB; font-size: 9pt; }
+QPushButton[nav="true"] { color: #CFE3E6; text-align: left; padding: 13px 18px; border: none; border-radius: 12px; font-weight: 600; background: transparent; }
+QPushButton[nav="true"]:hover { background: rgba(255,255,255,0.10); color: #FFFFFF; }
+QPushButton[nav="true"]:checked { background: qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #12A87B, stop:1 #2DBE7E); color: #FFFFFF; }
+QPushButton[nav="logout"] { color: #FFD9A0; text-align: left; padding: 12px 18px; border: 1px solid rgba(247,168,35,0.7); border-radius: 12px; font-weight: 700; background: transparent; }
+QPushButton[nav="logout"]:hover { background: #F7A823; color: #1B2735; }
+
+QFrame[card="white"] { background: #FFFFFF; border: 1px solid #E1ECE9; border-radius: 18px; }
+QFrame[card="mint"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #E3F7EF, stop:1 #D2EEF3); border: none; border-radius: 18px; }
+QFrame[card="green"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #12A87B, stop:1 #2DBE7E); border-radius: 18px; }
+QFrame[card="navy"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #1B2735, stop:1 #0B5D73); border-radius: 18px; }
+QFrame[card="orange"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #F7A823, stop:1 #FFC857); border-radius: 18px; }
+QFrame[card="teal"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #0B5D73, stop:1 #12A87B); border-radius: 18px; }
+QFrame[card="green"] QLabel, QFrame[card="navy"] QLabel, QFrame[card="teal"] QLabel { color: #FFFFFF; }
+QFrame[card="orange"] QLabel { color: #1B2735; }
+
+QLabel[role="title"] { font-size: 22pt; font-weight: 800; color: #1B2735; }
+QLabel[role="subtitle"] { font-size: 10.5pt; color: #6B7B8C; }
+QLabel[role="section"] { font-size: 13pt; font-weight: 700; color: #1B2735; }
+QLabel[role="statlabel"] { font-size: 10pt; font-weight: 600; }
+QLabel[role="statvalue"] { font-size: 22pt; font-weight: 800; }
+QLabel[role="statsub"] { font-size: 9pt; }
+QLabel[role="price"] { font-size: 14pt; font-weight: 800; color: #12A87B; }
+QLabel[role="roomname"] { font-size: 12pt; font-weight: 700; color: #1B2735; }
+QLabel[role="muted"] { color: #6B7B8C; }
+QLabel[role="fieldlabel"] { font-weight: 600; color: #1B2735; }
+QLabel[role="emoji"] { font-size: 40pt; }
+QLabel[role="chip_mint"] { background: #DFF5EC; color: #0B6B55; border-radius: 12px; padding: 6px 12px; font-weight: 600; }
+QLabel[role="chip_green"] { background: #12A87B; color: #FFFFFF; border-radius: 12px; padding: 5px 12px; font-weight: 700; }
+QLabel[role="chip_orange"] { background: #FFF0D2; color: #A8680A; border-radius: 12px; padding: 5px 12px; font-weight: 700; }
+QLabel[role="chip_navy"] { background: #E4EAF0; color: #1B2735; border-radius: 12px; padding: 5px 12px; font-weight: 700; }
+QFrame[card="roomimg"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #D9F3EA, stop:1 #BFE6EE); border-radius: 14px; border: none; }
+QFrame[card="roomimg"] QLabel { color: #0B5D73; }
+
+QPushButton[variant="primary"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #0B5D73, stop:1 #12A87B); color: #FFFFFF; border: none; border-radius: 12px; padding: 11px 22px; font-weight: 700; }
+QPushButton[variant="primary"]:hover { background: qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #0E7390, stop:1 #1FC490); }
+QPushButton[variant="accent"] { background: #F7A823; color: #1B2735; border: none; border-radius: 12px; padding: 11px 22px; font-weight: 700; }
+QPushButton[variant="accent"]:hover { background: #FFB93F; }
+QPushButton[variant="danger"] { background: #FDECEC; color: #D64545; border: 1px solid #F5BCBC; border-radius: 12px; padding: 11px 22px; font-weight: 700; }
+QPushButton[variant="danger"]:hover { background: #D64545; color: #FFFFFF; }
+QPushButton[variant="ghost"] { background: transparent; color: #0B5D73; border: 1.5px solid #0B5D73; border-radius: 12px; padding: 10px 22px; font-weight: 700; }
+QPushButton[variant="ghost"]:hover { background: #0B5D73; color: #FFFFFF; }
+QPushButton[variant="link"] { background: transparent; color: #12A87B; border: none; font-weight: 700; }
+QPushButton[variant="link"]:hover { color: #0B5D73; text-decoration: underline; }
+
+QLineEdit, QComboBox, QSpinBox, QDateEdit, QTextEdit { background: #FFFFFF; border: 1.5px solid #D5E3E0; border-radius: 12px; padding: 10px 14px; selection-background-color: #12A87B; }
+QLineEdit:focus, QComboBox:focus, QSpinBox:focus, QDateEdit:focus, QTextEdit:focus { border: 1.5px solid #12A87B; }
+QComboBox::drop-down, QDateEdit::drop-down { border: none; width: 28px; }
+QCheckBox::indicator { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid #12A87B; background: #FFFFFF; }
+QCheckBox::indicator:checked { background: #12A87B; }
+
+QTableWidget { background: #FFFFFF; border: 1px solid #E1ECE9; border-radius: 14px; gridline-color: transparent; alternate-background-color: #F4FAF8; selection-background-color: #D9F3EA; selection-color: #1B2735; }
+QTableWidget::item { padding: 10px; border: none; }
+QHeaderView::section { background: #1B2735; color: #FFFFFF; padding: 12px 10px; border: none; font-weight: 700; }
+QListWidget { background: #FFFFFF; border: 1px solid #E1ECE9; border-radius: 14px; padding: 8px; }
+QListWidget::item { padding: 14px; border-bottom: 1px solid #EEF3F2; border-radius: 10px; }
+QListWidget::item:selected { background: #D9F3EA; color: #1B2735; }
+QProgressBar { background: rgba(255,255,255,0.25); border: none; border-radius: 6px; }
+QProgressBar::chunk { background: #F7A823; border-radius: 6px; }
+QFrame[card="white"] QProgressBar { background: #E1ECE9; }
+QFrame[card="white"] QProgressBar::chunk { background: #12A87B; }
+QScrollBar:vertical { background: transparent; width: 10px; }
+QScrollBar::handle:vertical { background: #BFD6D1; border-radius: 5px; min-height: 30px; }
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
+</string></property>
+<widget class="QWidget" name="centralwidget"><layout class="QHBoxLayout" name="lay307" stretch="0,1"><property name="spacing"><number>0</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QFrame" name="sidebarUser"><property name="minimumSize"><size><width>256</width><height>0</height></size></property><property name="maximumSize"><size><width>256</width><height>16777215</height></size></property><layout class="QVBoxLayout" name="lay305"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>18</number></property><property name="topMargin"><number>22</number></property><property name="rightMargin"><number>18</number></property><property name="bottomMargin"><number>20</number></property><item>
+<widget class="QFrame" name="logoCard"><layout class="QVBoxLayout" name="lay301"><property name="spacing"><number>0</number></property><property name="leftMargin"><number>10</number></property><property name="topMargin"><number>10</number></property><property name="rightMargin"><number>10</number></property><property name="bottomMargin"><number>10</number></property><item>
+<widget class="QLabel" name="label300"><property name="pixmap"><pixmap>images/logo.png</pixmap></property><property name="scaledContents"><bool>true</bool></property><property name="minimumSize"><size><width>176</width><height>123</height></size></property><property name="maximumSize"><size><width>176</width><height>123</height></size></property><property name="text"><string></string></property></widget>
+</item>
+</layout></widget>
+</item>
+<item>
+<widget class="QLabel" name="label302"><property name="text"><string>USER</string></property><property name="role" stdset="0"><string>roleBadge</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="maximumSize"><size><width>90</width><height>16777215</height></size></property></widget>
+</item>
+<item>
+<widget class="QLabel" name="label303"><property name="text"><string>Menu setelah login</string></property><property name="role" stdset="0"><string>menuHint</string></property></widget>
+</item>
+<item>
+<widget class="QPushButton" name="btnUserDashboard"><property name="text"><string>🏠   Dashboard</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="nav" stdset="0"><string>true</string></property><property name="checkable"><bool>true</bool></property><property name="autoExclusive"><bool>true</bool></property></widget>
+</item>
+<item>
+<widget class="QPushButton" name="btnUserKatalog"><property name="text"><string>🛏️   Katalog Kamar</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="nav" stdset="0"><string>true</string></property><property name="checkable"><bool>true</bool></property><property name="autoExclusive"><bool>true</bool></property></widget>
+</item>
+<item>
+<widget class="QPushButton" name="btnUserPenyewaan"><property name="text"><string>📋   Penyewaan Saya</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="nav" stdset="0"><string>true</string></property><property name="checkable"><bool>true</bool></property><property name="autoExclusive"><bool>true</bool></property></widget>
+</item>
+<item>
+<widget class="QPushButton" name="btnUserPembayaran"><property name="text"><string>💳   Pembayaran</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="nav" stdset="0"><string>true</string></property><property name="checkable"><bool>true</bool></property><property name="autoExclusive"><bool>true</bool></property><property name="checked"><bool>true</bool></property></widget>
+</item>
+<item>
+<widget class="QPushButton" name="btnUserNotifikasi"><property name="text"><string>🔔   Notifikasi</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="nav" stdset="0"><string>true</string></property><property name="checkable"><bool>true</bool></property><property name="autoExclusive"><bool>true</bool></property></widget>
+</item>
+<item>
+<widget class="QPushButton" name="btnUserProfil"><property name="text"><string>👤   Profil</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="nav" stdset="0"><string>true</string></property><property name="checkable"><bool>true</bool></property><property name="autoExclusive"><bool>true</bool></property></widget>
+</item>
+<item><spacer name="sp304"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property></spacer></item>
+<item>
+<widget class="QPushButton" name="btnUserLogout"><property name="text"><string>🚪   Logout</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="nav" stdset="0"><string>logout</string></property></widget>
+</item>
+</layout></widget>
+</item>
+<item>
+<widget class="QWidget" name="content306"><layout class="QVBoxLayout" name="lay299"><property name="spacing"><number>16</number></property><property name="leftMargin"><number>32</number></property><property name="topMargin"><number>22</number></property><property name="rightMargin"><number>32</number></property><property name="bottomMargin"><number>24</number></property><item><layout class="QHBoxLayout" name="lay298"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><layout class="QVBoxLayout" name="lay295"><property name="spacing"><number>4</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label292"><property name="text"><string>Pembayaran 💳</string></property><property name="role" stdset="0"><string>title</string></property></widget>
+</item>
+<item>
+<widget class="QLabel" name="label293"><property name="text"><string>Bayar tagihan dan pantau status validasi dari admin.</string></property><property name="role" stdset="0"><string>subtitle</string></property></widget>
+</item>
+<item><spacer name="sp294"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>4</height></size></property></spacer></item>
+</layout></item>
+<item><spacer name="sp296"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
+<item>
+<widget class="QLabel" name="label297"><property name="pixmap"><pixmap>images/mascot_1.png</pixmap></property><property name="scaledContents"><bool>true</bool></property><property name="minimumSize"><size><width>87</width><height>110</height></size></property><property name="maximumSize"><size><width>87</width><height>110</height></size></property><property name="text"><string></string></property></widget>
+</item>
+</layout></item>
+<item><layout class="QHBoxLayout" name="lay291" stretch="4,6"><property name="spacing"><number>18</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QFrame" name="cardBayar"><property name="card" stdset="0"><string>white</string></property><layout class="QVBoxLayout" name="lay288"><property name="spacing"><number>10</number></property><property name="leftMargin"><number>24</number></property><property name="topMargin"><number>20</number></property><property name="rightMargin"><number>24</number></property><property name="bottomMargin"><number>20</number></property><item>
+<widget class="QLabel" name="label276"><property name="text"><string>Bayar Tagihan</string></property><property name="role" stdset="0"><string>section</string></property></widget>
+</item>
+<item>
+<widget class="QLabel" name="label277"><property name="text"><string>Pembayaran simulasi per periode bulan.</string></property><property name="role" stdset="0"><string>muted</string></property></widget>
+</item>
+<item><layout class="QVBoxLayout" name="lay279"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label278"><property name="text"><string>Penyewaan</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+</item>
+<item>
+<widget class="QComboBox" name="cmbPilihSewa"><item><property name="text"><string>#SW-003 — A-03 Deluxe</string></property></item>
+</widget>
+</item>
+</layout></item>
+<item><layout class="QHBoxLayout" name="lay284"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><layout class="QVBoxLayout" name="lay281"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label280"><property name="text"><string>Periode Bulan ke-</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+</item>
+<item>
+<widget class="QSpinBox" name="spinPeriode"><property name="minimum"><number>1</number></property><property name="maximum"><number>12</number></property><property name="value"><number>4</number></property><property name="singleStep"><number>1</number></property></widget>
+</item>
+</layout></item>
+<item><layout class="QVBoxLayout" name="lay283"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label282"><property name="text"><string>Metode</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+</item>
+<item>
+<widget class="QComboBox" name="cmbMetode"><item><property name="text"><string>🏦  Transfer Bank</string></property></item>
+<item><property name="text"><string>📱  E-Wallet</string></property></item>
+<item><property name="text"><string>💵  Tunai</string></property></item>
+</widget>
+</item>
+</layout></item>
+</layout></item>
+<item>
+<widget class="QFrame" name="cardJumlah"><property name="card" stdset="0"><string>green</string></property><layout class="QVBoxLayout" name="lay286"><property name="spacing"><number>2</number></property><property name="leftMargin"><number>18</number></property><property name="topMargin"><number>12</number></property><property name="rightMargin"><number>18</number></property><property name="bottomMargin"><number>12</number></property><item>
+<widget class="QLabel" name="label285"><property name="text"><string>Jumlah Bayar</string></property><property name="role" stdset="0"><string>statlabel</string></property></widget>
+</item>
+<item>
+<widget class="QLabel" name="lblJumlahBayar"><property name="text"><string>Rp 1.200.000</string></property><property name="role" stdset="0"><string>statvalue</string></property></widget>
+</item>
+</layout></widget>
+</item>
+<item>
+<widget class="QPushButton" name="btnBayar"><property name="text"><string>Bayar Sekarang</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="variant" stdset="0"><string>accent</string></property><property name="minimumSize"><size><width>0</width><height>46</height></size></property></widget>
+</item>
+<item><spacer name="sp287"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
+</layout></widget>
+</item>
+<item><layout class="QVBoxLayout" name="lay290"><property name="spacing"><number>10</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label289"><property name="text"><string>Riwayat Pembayaran</string></property><property name="role" stdset="0"><string>section</string></property></widget>
+</item>
+<item>
+<widget class="QTableWidget" name="tblRiwayatBayar"><property name="alternatingRowColors"><bool>true</bool></property><property name="editTriggers"><set>QAbstractItemView::NoEditTriggers</set></property><property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property><property name="showGrid"><bool>false</bool></property><attribute name="horizontalHeaderStretchLastSection"><bool>true</bool></attribute><attribute name="horizontalHeaderDefaultSectionSize"><number>130</number></attribute><attribute name="verticalHeaderDefaultSectionSize"><number>46</number></attribute><attribute name="verticalHeaderVisible"><bool>false</bool></attribute><row/><row/><row/><column><property name="text"><string>ID Bayar</string></property></column><column><property name="text"><string>Periode</string></property></column><column><property name="text"><string>Jumlah</string></property></column><column><property name="text"><string>Tgl Bayar</string></property></column><column><property name="text"><string>Status</string></property></column><item row="0" column="0"><property name="text"><string>#PB-011</string></property></item>
+<item row="0" column="1"><property name="text"><string>Bulan 3</string></property></item>
+<item row="0" column="2"><property name="text"><string>Rp 1.200.000</string></property></item>
+<item row="0" column="3"><property name="text"><string>01/11/2026</string></property></item>
+<item row="0" column="4"><property name="text"><string>🟢 Lunas</string></property></item>
+<item row="1" column="0"><property name="text"><string>#PB-010</string></property></item>
+<item row="1" column="1"><property name="text"><string>Bulan 2</string></property></item>
+<item row="1" column="2"><property name="text"><string>Rp 1.200.000</string></property></item>
+<item row="1" column="3"><property name="text"><string>01/10/2026</string></property></item>
+<item row="1" column="4"><property name="text"><string>🟢 Lunas</string></property></item>
+<item row="2" column="0"><property name="text"><string>#PB-009</string></property></item>
+<item row="2" column="1"><property name="text"><string>Bulan 1</string></property></item>
+<item row="2" column="2"><property name="text"><string>Rp 1.200.000</string></property></item>
+<item row="2" column="3"><property name="text"><string>01/09/2026</string></property></item>
+<item row="2" column="4"><property name="text"><string>🟡 Menunggu Validasi</string></property></item>
+</widget>
+</item>
+</layout></item>
+</layout></item>
+</layout></widget>
+</item>
+</layout></widget>
+</widget>
+ <resources/>
+ <connections/>
+</ui>

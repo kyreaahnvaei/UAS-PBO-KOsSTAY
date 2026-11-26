@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Win_login</class>
+ <widget class="QMainWindow" name="Win_login"><property name="geometry"><rect><x>0</x><y>0</y><width>1320</width><height>780</height></rect></property><property name="minimumSize"><size><width>1180</width><height>700</height></size></property><property name="windowTitle"><string>KOSTAY - Login</string></property><property name="styleSheet"><string notr="true">
+* { font-family: 'Segoe UI', 'Inter', sans-serif; font-size: 10pt; color: #243040; }
+QMainWindow, QWidget#centralwidget { background: #F4F8F7; }
+QLabel { background: transparent; }
+QCheckBox { background: transparent; spacing: 8px; }
+QScrollArea { background: transparent; border: none; }
+
+QFrame#loginShell { background: #FFFFFF; border-radius: 28px; }
+QFrame#brandPanel { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #E9F8F2, stop:1 #CDEFF2); border-top-left-radius: 28px; border-bottom-left-radius: 28px; }
+QWidget#centralwidgetLogin { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #1B2735, stop:0.55 #0B5D73, stop:1 #12A87B); }
+
+QFrame#sidebarUser, QFrame#sidebarAdmin { background: qlineargradient(x1:0,y1:0,x2:0,y2:1, stop:0 #1B2735, stop:1 #0B5D73); }
+QFrame#sidebarUser QLabel, QFrame#sidebarAdmin QLabel { color: #FFFFFF; }
+QFrame#logoCard { background: #FFFFFF; border-radius: 18px; }
+QLabel[role="roleBadge"] { background: #F7A823; color: #1B2735; border-radius: 10px; padding: 4px 12px; font-weight: 800; letter-spacing: 2px; }
+QFrame#sidebarUser QLabel[role="roleBadge"], QFrame#sidebarAdmin QLabel[role="roleBadge"] { color: #1B2735; }
+QLabel[role="menuHint"] { color: #9FC3CB; font-size: 9pt; }
+QPushButton[nav="true"] { color: #CFE3E6; text-align: left; padding: 13px 18px; border: none; border-radius: 12px; font-weight: 600; background: transparent; }
+QPushButton[nav="true"]:hover { background: rgba(255,255,255,0.10); color: #FFFFFF; }
+QPushButton[nav="true"]:checked { background: qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #12A87B, stop:1 #2DBE7E); color: #FFFFFF; }
+QPushButton[nav="logout"] { color: #FFD9A0; text-align: left; padding: 12px 18px; border: 1px solid rgba(247,168,35,0.7); border-radius: 12px; font-weight: 700; background: transparent; }
+QPushButton[nav="logout"]:hover { background: #F7A823; color: #1B2735; }
+
+QFrame[card="white"] { background: #FFFFFF; border: 1px solid #E1ECE9; border-radius: 18px; }
+QFrame[card="mint"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #E3F7EF, stop:1 #D2EEF3); border: none; border-radius: 18px; }
+QFrame[card="green"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #12A87B, stop:1 #2DBE7E); border-radius: 18px; }
+QFrame[card="navy"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #1B2735, stop:1 #0B5D73); border-radius: 18px; }
+QFrame[card="orange"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #F7A823, stop:1 #FFC857); border-radius: 18px; }
+QFrame[card="teal"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #0B5D73, stop:1 #12A87B); border-radius: 18px; }
+QFrame[card="green"] QLabel, QFrame[card="navy"] QLabel, QFrame[card="teal"] QLabel { color: #FFFFFF; }
+QFrame[card="orange"] QLabel { color: #1B2735; }
+
+QLabel[role="title"] { font-size: 22pt; font-weight: 800; color: #1B2735; }
+QLabel[role="subtitle"] { font-size: 10.5pt; color: #6B7B8C; }
+QLabel[role="section"] { font-size: 13pt; font-weight: 700; color: #1B2735; }
+QLabel[role="statlabel"] { font-size: 10pt; font-weight: 600; }
+QLabel[role="statvalue"] { font-size: 22pt; font-weight: 800; }
+QLabel[role="statsub"] { font-size: 9pt; }
+QLabel[role="price"] { font-size: 14pt; font-weight: 800; color: #12A87B; }
+QLabel[role="roomname"] { font-size: 12pt; font-weight: 700; color: #1B2735; }
+QLabel[role="muted"] { color: #6B7B8C; }
+QLabel[role="fieldlabel"] { font-weight: 600; color: #1B2735; }
+QLabel[role="emoji"] { font-size: 40pt; }
+QLabel[role="chip_mint"] { background: #DFF5EC; color: #0B6B55; border-radius: 12px; padding: 6px 12px; font-weight: 600; }
+QLabel[role="chip_green"] { background: #12A87B; color: #FFFFFF; border-radius: 12px; padding: 5px 12px; font-weight: 700; }
+QLabel[role="chip_orange"] { background: #FFF0D2; color: #A8680A; border-radius: 12px; padding: 5px 12px; font-weight: 700; }
+QLabel[role="chip_navy"] { background: #E4EAF0; color: #1B2735; border-radius: 12px; padding: 5px 12px; font-weight: 700; }
+QFrame[card="roomimg"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #D9F3EA, stop:1 #BFE6EE); border-radius: 14px; border: none; }
+QFrame[card="roomimg"] QLabel { color: #0B5D73; }
+
+QPushButton[variant="primary"] { background: qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #0B5D73, stop:1 #12A87B); color: #FFFFFF; border: none; border-radius: 12px; padding: 11px 22px; font-weight: 700; }
+QPushButton[variant="primary"]:hover { background: qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #0E7390, stop:1 #1FC490); }
+QPushButton[variant="accent"] { background: #F7A823; color: #1B2735; border: none; border-radius: 12px; padding: 11px 22px; font-weight: 700; }
+QPushButton[variant="accent"]:hover { background: #FFB93F; }
+QPushButton[variant="danger"] { background: #FDECEC; color: #D64545; border: 1px solid #F5BCBC; border-radius: 12px; padding: 11px 22px; font-weight: 700; }
+QPushButton[variant="danger"]:hover { background: #D64545; color: #FFFFFF; }
+QPushButton[variant="ghost"] { background: transparent; color: #0B5D73; border: 1.5px solid #0B5D73; border-radius: 12px; padding: 10px 22px; font-weight: 700; }
+QPushButton[variant="ghost"]:hover { background: #0B5D73; color: #FFFFFF; }
+QPushButton[variant="link"] { background: transparent; color: #12A87B; border: none; font-weight: 700; }
+QPushButton[variant="link"]:hover { color: #0B5D73; text-decoration: underline; }
+
+QLineEdit, QComboBox, QSpinBox, QDateEdit, QTextEdit { background: #FFFFFF; border: 1.5px solid #D5E3E0; border-radius: 12px; padding: 10px 14px; selection-background-color: #12A87B; }
+QLineEdit:focus, QComboBox:focus, QSpinBox:focus, QDateEdit:focus, QTextEdit:focus { border: 1.5px solid #12A87B; }
+QComboBox::drop-down, QDateEdit::drop-down { border: none; width: 28px; }
+QCheckBox::indicator { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid #12A87B; background: #FFFFFF; }
+QCheckBox::indicator:checked { background: #12A87B; }
+
+QTableWidget { background: #FFFFFF; border: 1px solid #E1ECE9; border-radius: 14px; gridline-color: transparent; alternate-background-color: #F4FAF8; selection-background-color: #D9F3EA; selection-color: #1B2735; }
+QTableWidget::item { padding: 10px; border: none; }
+QHeaderView::section { background: #1B2735; color: #FFFFFF; padding: 12px 10px; border: none; font-weight: 700; }
+QListWidget { background: #FFFFFF; border: 1px solid #E1ECE9; border-radius: 14px; padding: 8px; }
+QListWidget::item { padding: 14px; border-bottom: 1px solid #EEF3F2; border-radius: 10px; }
+QListWidget::item:selected { background: #D9F3EA; color: #1B2735; }
+QProgressBar { background: rgba(255,255,255,0.25); border: none; border-radius: 6px; }
+QProgressBar::chunk { background: #F7A823; border-radius: 6px; }
+QFrame[card="white"] QProgressBar { background: #E1ECE9; }
+QFrame[card="white"] QProgressBar::chunk { background: #12A87B; }
+QScrollBar:vertical { background: transparent; width: 10px; }
+QScrollBar::handle:vertical { background: #BFD6D1; border-radius: 5px; min-height: 30px; }
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
+</string></property>
+<widget class="QWidget" name="centralwidget"><property name="login" stdset="0"><string>1</string></property><property name="styleSheet"><string notr="true">QWidget#centralwidget { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #1B2735, stop:0.55 #0B5D73, stop:1 #12A87B); }</string></property><layout class="QHBoxLayout" name="lay34"><property name="spacing"><number>0</number></property><property name="leftMargin"><number>50</number></property><property name="topMargin"><number>40</number></property><property name="rightMargin"><number>50</number></property><property name="bottomMargin"><number>40</number></property><item>
+<widget class="QFrame" name="loginShell"><property name="maximumSize"><size><width>1060</width><height>640</height></size></property><layout class="QHBoxLayout" name="lay33" stretch="5,4"><property name="spacing"><number>0</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QFrame" name="brandPanel"><layout class="QVBoxLayout" name="lay16"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>40</number></property><property name="topMargin"><number>30</number></property><property name="rightMargin"><number>40</number></property><property name="bottomMargin"><number>30</number></property><item><spacer name="sp1"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
+<item><layout class="QHBoxLayout" name="lay5"><property name="spacing"><number>10</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><spacer name="sp2"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>10</width><height>20</height></size></property></spacer></item>
+<item>
+<widget class="QLabel" name="label3"><property name="pixmap"><pixmap>images/logo.png</pixmap></property><property name="scaledContents"><bool>true</bool></property><property name="minimumSize"><size><width>300</width><height>209</height></size></property><property name="maximumSize"><size><width>300</width><height>209</height></size></property><property name="text"><string></string></property></widget>
+</item>
+<item><spacer name="sp4"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>10</width><height>20</height></size></property></spacer></item>
+</layout></item>
+<item><layout class="QHBoxLayout" name="lay9"><property name="spacing"><number>10</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><spacer name="sp6"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>10</width><height>20</height></size></property></spacer></item>
+<item>
+<widget class="QLabel" name="label7"><property name="pixmap"><pixmap>images/mascot_2.png</pixmap></property><property name="scaledContents"><bool>true</bool></property><property name="minimumSize"><size><width>167</width><height>230</height></size></property><property name="maximumSize"><size><width>167</width><height>230</height></size></property><property name="text"><string></string></property></widget>
+</item>
+<item><spacer name="sp8"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>10</width><height>20</height></size></property></spacer></item>
+</layout></item>
+<item>
+<widget class="QLabel" name="label10"><property name="text"><string>Cari, sewa, dan bayar kamar kos dengan mudah.</string></property><property name="role" stdset="0"><string>section</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="wordWrap"><bool>true</bool></property></widget>
+</item>
+<item><layout class="QHBoxLayout" name="lay14"><property name="spacing"><number>8</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label11"><property name="text"><string>🏘️ Katalog lengkap</string></property><property name="role" stdset="0"><string>chip_mint</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget>
+</item>
+<item>
+<widget class="QLabel" name="label12"><property name="text"><string>💳 Bayar mudah</string></property><property name="role" stdset="0"><string>chip_mint</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget>
+</item>
+<item>
+<widget class="QLabel" name="label13"><property name="text"><string>🔔 Pengingat</string></property><property name="role" stdset="0"><string>chip_mint</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget>
+</item>
+</layout></item>
+<item><spacer name="sp15"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
+</layout></widget>
+</item>
+<item>
+<widget class="QFrame" name="loginForm17"><layout class="QVBoxLayout" name="lay32"><property name="spacing"><number>10</number></property><property name="leftMargin"><number>52</number></property><property name="topMargin"><number>30</number></property><property name="rightMargin"><number>52</number></property><property name="bottomMargin"><number>30</number></property><item><spacer name="sp18"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
+<item>
+<widget class="QLabel" name="lblWelcome"><property name="text"><string>Selamat Datang 👋</string></property><property name="role" stdset="0"><string>title</string></property></widget>
+</item>
+<item>
+<widget class="QLabel" name="label19"><property name="text"><string>Masuk untuk menemukan kamar kos terbaikmu.</string></property><property name="role" stdset="0"><string>subtitle</string></property></widget>
+</item>
+<item><spacer name="sp20"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>8</height></size></property></spacer></item>
+<item><layout class="QVBoxLayout" name="lay22"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label21"><property name="text"><string>Username</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+</item>
+<item>
+<widget class="QLineEdit" name="txtUsername"><property name="placeholderText"><string>👤  Masukkan username</string></property></widget>
+</item>
+</layout></item>
+<item><layout class="QVBoxLayout" name="lay24"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label23"><property name="text"><string>Password</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+</item>
+<item>
+<widget class="QLineEdit" name="txtPassword"><property name="placeholderText"><string>🔒  Masukkan password</string></property><property name="echoMode"><enum>QLineEdit::Password</enum></property></widget>
+</item>
+</layout></item>
+<item><layout class="QVBoxLayout" name="lay26"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label25"><property name="text"><string>Masuk sebagai</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+</item>
+<item>
+<widget class="QComboBox" name="cmbRole"><item><property name="text"><string>🙋  User (Penghuni)</string></property></item>
+<item><property name="text"><string>🛡️  Admin (Pengelola)</string></property></item>
+</widget>
+</item>
+</layout></item>
+<item>
+<widget class="QCheckBox" name="chkRemember"><property name="text"><string>Ingat saya</string></property></widget>
+</item>
+<item>
+<widget class="QPushButton" name="btnLogin"><property name="text"><string>Login</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="variant" stdset="0"><string>primary</string></property><property name="minimumSize"><size><width>0</width><height>46</height></size></property></widget>
+</item>
+<item><layout class="QHBoxLayout" name="lay30"><property name="spacing"><number>4</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><spacer name="sp27"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
+<item>
+<widget class="QLabel" name="label28"><property name="text"><string>Belum punya akun?</string></property><property name="role" stdset="0"><string>muted</string></property></widget>
+</item>
+<item>
+<widget class="QPushButton" name="btnRegister"><property name="text"><string>Registrasi</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="variant" stdset="0"><string>link</string></property></widget>
+</item>
+<item><spacer name="sp29"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
+</layout></item>
+<item><spacer name="sp31"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
+</layout></widget>
+</item>
+</layout></widget>
+</item>
+</layout></widget>
+</widget>
+ <resources/>
+ <connections/>
+</ui>
