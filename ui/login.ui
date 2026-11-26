@@ -42,6 +42,7 @@ QLabel[role="statsub"] { font-size: 9pt; }
 QLabel[role="price"] { font-size: 14pt; font-weight: 800; color: #12A87B; }
 QLabel[role="roomname"] { font-size: 12pt; font-weight: 700; color: #1B2735; }
 QLabel[role="muted"] { color: #6B7B8C; }
+QLabel[role="error"] { background: #FDECEC; color: #D64545; border-radius: 10px; padding: 8px 12px; font-weight: 600; }
 QLabel[role="fieldlabel"] { font-weight: 600; color: #1B2735; }
 QLabel[role="emoji"] { font-size: 40pt; }
 QLabel[role="chip_mint"] { background: #DFF5EC; color: #0B6B55; border-radius: 12px; padding: 6px 12px; font-weight: 600; }
@@ -82,8 +83,8 @@ QScrollBar:vertical { background: transparent; width: 10px; }
 QScrollBar::handle:vertical { background: #BFD6D1; border-radius: 5px; min-height: 30px; }
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
 </string></property>
-<widget class="QWidget" name="centralwidget"><property name="login" stdset="0"><string>1</string></property><property name="styleSheet"><string notr="true">QWidget#centralwidget { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #1B2735, stop:0.55 #0B5D73, stop:1 #12A87B); }</string></property><layout class="QHBoxLayout" name="lay34"><property name="spacing"><number>0</number></property><property name="leftMargin"><number>50</number></property><property name="topMargin"><number>40</number></property><property name="rightMargin"><number>50</number></property><property name="bottomMargin"><number>40</number></property><item>
-<widget class="QFrame" name="loginShell"><property name="maximumSize"><size><width>1060</width><height>640</height></size></property><layout class="QHBoxLayout" name="lay33" stretch="5,4"><property name="spacing"><number>0</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QWidget" name="centralwidget"><property name="login" stdset="0"><string>1</string></property><property name="styleSheet"><string notr="true">QWidget#centralwidget { background: qlineargradient(x1:0,y1:0,x2:1,y2:1, stop:0 #1B2735, stop:0.55 #0B5D73, stop:1 #12A87B); }</string></property><layout class="QHBoxLayout" name="lay28"><property name="spacing"><number>0</number></property><property name="leftMargin"><number>50</number></property><property name="topMargin"><number>40</number></property><property name="rightMargin"><number>50</number></property><property name="bottomMargin"><number>40</number></property><item>
+<widget class="QFrame" name="loginShell"><property name="maximumSize"><size><width>1060</width><height>640</height></size></property><layout class="QHBoxLayout" name="lay27" stretch="5,4"><property name="spacing"><number>0</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
 <widget class="QFrame" name="brandPanel"><layout class="QVBoxLayout" name="lay16"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>40</number></property><property name="topMargin"><number>30</number></property><property name="rightMargin"><number>40</number></property><property name="bottomMargin"><number>30</number></property><item><spacer name="sp1"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
 <item><layout class="QHBoxLayout" name="lay5"><property name="spacing"><number>10</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><spacer name="sp2"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>10</width><height>20</height></size></property></spacer></item>
 <item>
@@ -114,7 +115,7 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
 </layout></widget>
 </item>
 <item>
-<widget class="QFrame" name="loginForm17"><layout class="QVBoxLayout" name="lay32"><property name="spacing"><number>10</number></property><property name="leftMargin"><number>52</number></property><property name="topMargin"><number>30</number></property><property name="rightMargin"><number>52</number></property><property name="bottomMargin"><number>30</number></property><item><spacer name="sp18"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
+<widget class="QFrame" name="loginForm17"><layout class="QVBoxLayout" name="lay26"><property name="spacing"><number>10</number></property><property name="leftMargin"><number>52</number></property><property name="topMargin"><number>30</number></property><property name="rightMargin"><number>52</number></property><property name="bottomMargin"><number>30</number></property><item><spacer name="sp18"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
 <item>
 <widget class="QLabel" name="lblWelcome"><property name="text"><string>Selamat Datang 👋</string></property><property name="role" stdset="0"><string>title</string></property></widget>
 </item>
@@ -136,31 +137,19 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
 <widget class="QLineEdit" name="txtPassword"><property name="placeholderText"><string>🔒  Masukkan password</string></property><property name="echoMode"><enum>QLineEdit::Password</enum></property></widget>
 </item>
 </layout></item>
-<item><layout class="QVBoxLayout" name="lay26"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
-<widget class="QLabel" name="label25"><property name="text"><string>Masuk sebagai</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+<item>
+<widget class="QLabel" name="lblRoleHint"><property name="text"><string>🔐  Role (User / Admin) terdeteksi otomatis dari akun kamu.</string></property><property name="role" stdset="0"><string>muted</string></property></widget>
 </item>
 <item>
-<widget class="QComboBox" name="cmbRole"><item><property name="text"><string>🙋  User (Penghuni)</string></property></item>
-<item><property name="text"><string>🛡️  Admin (Pengelola)</string></property></item>
-</widget>
+<widget class="QLabel" name="lblError"><property name="text"><string>⚠️  Username atau password salah.</string></property><property name="role" stdset="0"><string>error</string></property><property name="visible"><bool>false</bool></property></widget>
 </item>
-</layout></item>
 <item>
 <widget class="QCheckBox" name="chkRemember"><property name="text"><string>Ingat saya</string></property></widget>
 </item>
 <item>
 <widget class="QPushButton" name="btnLogin"><property name="text"><string>Login</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="variant" stdset="0"><string>primary</string></property><property name="minimumSize"><size><width>0</width><height>46</height></size></property></widget>
 </item>
-<item><layout class="QHBoxLayout" name="lay30"><property name="spacing"><number>4</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><spacer name="sp27"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
-<item>
-<widget class="QLabel" name="label28"><property name="text"><string>Belum punya akun?</string></property><property name="role" stdset="0"><string>muted</string></property></widget>
-</item>
-<item>
-<widget class="QPushButton" name="btnRegister"><property name="text"><string>Registrasi</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="variant" stdset="0"><string>link</string></property></widget>
-</item>
-<item><spacer name="sp29"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
-</layout></item>
-<item><spacer name="sp31"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
+<item><spacer name="sp25"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
 </layout></widget>
 </item>
 </layout></widget>

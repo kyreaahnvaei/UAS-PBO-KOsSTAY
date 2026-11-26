@@ -42,6 +42,7 @@ QLabel[role="statsub"] { font-size: 9pt; }
 QLabel[role="price"] { font-size: 14pt; font-weight: 800; color: #12A87B; }
 QLabel[role="roomname"] { font-size: 12pt; font-weight: 700; color: #1B2735; }
 QLabel[role="muted"] { color: #6B7B8C; }
+QLabel[role="error"] { background: #FDECEC; color: #D64545; border-radius: 10px; padding: 8px 12px; font-weight: 600; }
 QLabel[role="fieldlabel"] { font-weight: 600; color: #1B2735; }
 QLabel[role="emoji"] { font-size: 40pt; }
 QLabel[role="chip_mint"] { background: #DFF5EC; color: #0B6B55; border-radius: 12px; padding: 6px 12px; font-weight: 600; }
@@ -82,18 +83,18 @@ QScrollBar:vertical { background: transparent; width: 10px; }
 QScrollBar::handle:vertical { background: #BFD6D1; border-radius: 5px; min-height: 30px; }
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
 </string></property>
-<widget class="QWidget" name="centralwidget"><layout class="QHBoxLayout" name="lay464" stretch="0,1"><property name="spacing"><number>0</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
-<widget class="QFrame" name="sidebarAdmin"><property name="minimumSize"><size><width>256</width><height>0</height></size></property><property name="maximumSize"><size><width>256</width><height>16777215</height></size></property><layout class="QVBoxLayout" name="lay462"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>18</number></property><property name="topMargin"><number>22</number></property><property name="rightMargin"><number>18</number></property><property name="bottomMargin"><number>20</number></property><item>
-<widget class="QFrame" name="logoCard"><layout class="QVBoxLayout" name="lay458"><property name="spacing"><number>0</number></property><property name="leftMargin"><number>10</number></property><property name="topMargin"><number>10</number></property><property name="rightMargin"><number>10</number></property><property name="bottomMargin"><number>10</number></property><item>
-<widget class="QLabel" name="label457"><property name="pixmap"><pixmap>images/logo.png</pixmap></property><property name="scaledContents"><bool>true</bool></property><property name="minimumSize"><size><width>176</width><height>123</height></size></property><property name="maximumSize"><size><width>176</width><height>123</height></size></property><property name="text"><string></string></property></widget>
+<widget class="QWidget" name="centralwidget"><layout class="QHBoxLayout" name="lay422" stretch="0,1"><property name="spacing"><number>0</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QFrame" name="sidebarAdmin"><property name="minimumSize"><size><width>256</width><height>0</height></size></property><property name="maximumSize"><size><width>256</width><height>16777215</height></size></property><layout class="QVBoxLayout" name="lay420"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>18</number></property><property name="topMargin"><number>22</number></property><property name="rightMargin"><number>18</number></property><property name="bottomMargin"><number>20</number></property><item>
+<widget class="QFrame" name="logoCard"><layout class="QVBoxLayout" name="lay416"><property name="spacing"><number>0</number></property><property name="leftMargin"><number>10</number></property><property name="topMargin"><number>10</number></property><property name="rightMargin"><number>10</number></property><property name="bottomMargin"><number>10</number></property><item>
+<widget class="QLabel" name="label415"><property name="pixmap"><pixmap>images/logo.png</pixmap></property><property name="scaledContents"><bool>true</bool></property><property name="minimumSize"><size><width>176</width><height>123</height></size></property><property name="maximumSize"><size><width>176</width><height>123</height></size></property><property name="text"><string></string></property></widget>
 </item>
 </layout></widget>
 </item>
 <item>
-<widget class="QLabel" name="label459"><property name="text"><string>ADMIN</string></property><property name="role" stdset="0"><string>roleBadge</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="maximumSize"><size><width>90</width><height>16777215</height></size></property></widget>
+<widget class="QLabel" name="label417"><property name="text"><string>ADMIN</string></property><property name="role" stdset="0"><string>roleBadge</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="maximumSize"><size><width>90</width><height>16777215</height></size></property></widget>
 </item>
 <item>
-<widget class="QLabel" name="label460"><property name="text"><string>Menu setelah login</string></property><property name="role" stdset="0"><string>menuHint</string></property></widget>
+<widget class="QLabel" name="label418"><property name="text"><string>Menu setelah login</string></property><property name="role" stdset="0"><string>menuHint</string></property></widget>
 </item>
 <item>
 <widget class="QPushButton" name="btnAdminDashboard"><property name="text"><string>🏠   Dashboard</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="nav" stdset="0"><string>true</string></property><property name="checkable"><bool>true</bool></property><property name="autoExclusive"><bool>true</bool></property></widget>
@@ -113,39 +114,39 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
 <item>
 <widget class="QPushButton" name="btnAdminNotif"><property name="text"><string>🔔   Kirim Notifikasi</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="nav" stdset="0"><string>true</string></property><property name="checkable"><bool>true</bool></property><property name="autoExclusive"><bool>true</bool></property></widget>
 </item>
-<item><spacer name="sp461"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property></spacer></item>
+<item><spacer name="sp419"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property></spacer></item>
 <item>
 <widget class="QPushButton" name="btnAdminLogout"><property name="text"><string>🚪   Logout</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="nav" stdset="0"><string>logout</string></property></widget>
 </item>
 </layout></widget>
 </item>
 <item>
-<widget class="QWidget" name="content463"><layout class="QVBoxLayout" name="lay456"><property name="spacing"><number>16</number></property><property name="leftMargin"><number>32</number></property><property name="topMargin"><number>22</number></property><property name="rightMargin"><number>32</number></property><property name="bottomMargin"><number>24</number></property><item><layout class="QHBoxLayout" name="lay455"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><layout class="QVBoxLayout" name="lay452"><property name="spacing"><number>4</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
-<widget class="QLabel" name="label449"><property name="text"><string>Tambah / Edit Kamar ✏️</string></property><property name="role" stdset="0"><string>title</string></property></widget>
+<widget class="QWidget" name="content421"><layout class="QVBoxLayout" name="lay414"><property name="spacing"><number>16</number></property><property name="leftMargin"><number>32</number></property><property name="topMargin"><number>22</number></property><property name="rightMargin"><number>32</number></property><property name="bottomMargin"><number>24</number></property><item><layout class="QHBoxLayout" name="lay413"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><layout class="QVBoxLayout" name="lay410"><property name="spacing"><number>4</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label407"><property name="text"><string>Tambah / Edit Kamar ✏️</string></property><property name="role" stdset="0"><string>title</string></property></widget>
 </item>
 <item>
-<widget class="QLabel" name="label450"><property name="text"><string>Lengkapi data kamar lalu simpan.</string></property><property name="role" stdset="0"><string>subtitle</string></property></widget>
+<widget class="QLabel" name="label408"><property name="text"><string>Lengkapi data kamar lalu simpan.</string></property><property name="role" stdset="0"><string>subtitle</string></property></widget>
 </item>
-<item><spacer name="sp451"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>4</height></size></property></spacer></item>
+<item><spacer name="sp409"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>4</height></size></property></spacer></item>
 </layout></item>
-<item><spacer name="sp453"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
+<item><spacer name="sp411"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
 <item>
-<widget class="QLabel" name="label454"><property name="pixmap"><pixmap>images/mascot_3.png</pixmap></property><property name="scaledContents"><bool>true</bool></property><property name="minimumSize"><size><width>74</width><height>110</height></size></property><property name="maximumSize"><size><width>74</width><height>110</height></size></property><property name="text"><string></string></property></widget>
+<widget class="QLabel" name="label412"><property name="pixmap"><pixmap>images/mascot_3.png</pixmap></property><property name="scaledContents"><bool>true</bool></property><property name="minimumSize"><size><width>74</width><height>110</height></size></property><property name="maximumSize"><size><width>74</width><height>110</height></size></property><property name="text"><string></string></property></widget>
 </item>
 </layout></item>
 <item>
-<widget class="QFrame" name="cardFormKamar"><property name="card" stdset="0"><string>white</string></property><layout class="QVBoxLayout" name="lay448"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>24</number></property><property name="topMargin"><number>20</number></property><property name="rightMargin"><number>24</number></property><property name="bottomMargin"><number>20</number></property><item>
-<widget class="QLabel" name="label431"><property name="text"><string>Data Kamar</string></property><property name="role" stdset="0"><string>section</string></property></widget>
+<widget class="QFrame" name="cardFormKamar"><property name="card" stdset="0"><string>white</string></property><layout class="QVBoxLayout" name="lay406"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>24</number></property><property name="topMargin"><number>20</number></property><property name="rightMargin"><number>24</number></property><property name="bottomMargin"><number>20</number></property><item>
+<widget class="QLabel" name="label389"><property name="text"><string>Data Kamar</string></property><property name="role" stdset="0"><string>section</string></property></widget>
 </item>
-<item><layout class="QHBoxLayout" name="lay436"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><layout class="QVBoxLayout" name="lay433"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
-<widget class="QLabel" name="label432"><property name="text"><string>Nama Kamar</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+<item><layout class="QHBoxLayout" name="lay394"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><layout class="QVBoxLayout" name="lay391"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label390"><property name="text"><string>Nama Kamar</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
 </item>
 <item>
 <widget class="QLineEdit" name="txtNamaKamar"><property name="placeholderText"><string>Contoh: A-04</string></property></widget>
 </item>
 </layout></item>
-<item><layout class="QVBoxLayout" name="lay435"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
-<widget class="QLabel" name="label434"><property name="text"><string>Tipe</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+<item><layout class="QVBoxLayout" name="lay393"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label392"><property name="text"><string>Tipe</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
 </item>
 <item>
 <widget class="QComboBox" name="cmbTipeKamar"><item><property name="text"><string>Standard</string></property></item>
@@ -155,15 +156,15 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
 </item>
 </layout></item>
 </layout></item>
-<item><layout class="QHBoxLayout" name="lay441"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><layout class="QVBoxLayout" name="lay438"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
-<widget class="QLabel" name="label437"><property name="text"><string>Harga / Bulan</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+<item><layout class="QHBoxLayout" name="lay399"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><layout class="QVBoxLayout" name="lay396"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label395"><property name="text"><string>Harga / Bulan</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
 </item>
 <item>
 <widget class="QSpinBox" name="spinHarga"><property name="minimum"><number>0</number></property><property name="maximum"><number>20000000</number></property><property name="value"><number>1000000</number></property><property name="singleStep"><number>50000</number></property><property name="prefix"><string>Rp </string></property></widget>
 </item>
 </layout></item>
-<item><layout class="QVBoxLayout" name="lay440"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
-<widget class="QLabel" name="label439"><property name="text"><string>Status</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+<item><layout class="QVBoxLayout" name="lay398"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label397"><property name="text"><string>Status</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
 </item>
 <item>
 <widget class="QComboBox" name="cmbStatusKamar"><item><property name="text"><string>Tersedia</string></property></item>
@@ -173,21 +174,21 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
 </item>
 </layout></item>
 </layout></item>
-<item><layout class="QVBoxLayout" name="lay443"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
-<widget class="QLabel" name="label442"><property name="text"><string>Fasilitas</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+<item><layout class="QVBoxLayout" name="lay401"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label400"><property name="text"><string>Fasilitas</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
 </item>
 <item>
 <widget class="QLineEdit" name="txtFasilitas"><property name="placeholderText"><string>WiFi, AC, KM Dalam</string></property></widget>
 </item>
 </layout></item>
-<item><layout class="QVBoxLayout" name="lay445"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
-<widget class="QLabel" name="label444"><property name="text"><string>Deskripsi</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
+<item><layout class="QVBoxLayout" name="lay403"><property name="spacing"><number>6</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item>
+<widget class="QLabel" name="label402"><property name="text"><string>Deskripsi</string></property><property name="role" stdset="0"><string>fieldlabel</string></property></widget>
 </item>
 <item>
 <widget class="QTextEdit" name="txtDeskripsi"><property name="placeholderText"><string>Deskripsi kamar...</string></property></widget>
 </item>
 </layout></item>
-<item><layout class="QHBoxLayout" name="lay447"><property name="spacing"><number>10</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><spacer name="sp446"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
+<item><layout class="QHBoxLayout" name="lay405"><property name="spacing"><number>10</number></property><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><item><spacer name="sp404"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
 <item>
 <widget class="QPushButton" name="btnBatal"><property name="text"><string>Batal</string></property><property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property><property name="variant" stdset="0"><string>ghost</string></property></widget>
 </item>
